@@ -1,5 +1,6 @@
 
 <!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -8,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>BMI Calculator</title>
+    <title>Wskaźnik BMI</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -55,41 +56,19 @@
 <main role="main" class="container">
 
     <div class="starter-template">
-        <h1>Oblicz swój wskaźnik BMI</h1>
+        <h2>Twój wskażnik BMI wynosi:</h2>
+    </div>
+    <div class="starter-template">
+        <h1 th:text="${(bmi)}"></h1>
+    </div>
+    <div class="starter-template">
+
+        <h1>I oznacza: </h1>
+        <h1 th:text="${(answer)}"></h1>
     </div>
 
-    <form action="/run" method="get">
-        <label for="inlineRadio1">Płeć: </label>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="femaleRadio" id="inlineRadio1" value="option1">
-            <label class="form-check-label" for="inlineRadio1">Kobieta</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="maleRadio" id="inlineRadio2" value="option2">
-            <label class="form-check-label" for="inlineRadio2">Mężczyzna</label>
-        </div>
 
-        <div class="form-group">
-            <label for="inputWeight">Waga: </label>
-            <input type="number" step="0.5"  name="weight" class="form-control" id="inputWeight" >
-        </div>
-        <div class="form-group">
-            <label for="inputHeight">Wzrost: </label>
-            <input type="number" step="1"  name="height" class="form-control" id="inputHeight">
-        </div>
 
-        <button type="submit" class="btn btn-primary">Oblicz</button>
-    </form>
-
-    <h4>Zakresy wartości BMI:</h4>
-    <p>mniej niż 16 - wygłodzenie</p>
-    <p>16 - 16.99 - wychudzenie</p>
-    <p>17 - 18.49 - niedowaga</p>
-    <p>18.5 - 24.99 - wartość prawidłowa</p>
-    <p>25 - 29.99 - nadwaga</p>
-    <p>30 - 34.99 - I stopień otyłości</p>
-    <p>35 - 39.99 - II stopień otyłości</p>
-    <p>powyżej 40 - otyłość skrajna</p>
 
 </main><!-- /.container -->
 
