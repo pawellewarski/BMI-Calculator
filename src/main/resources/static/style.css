@@ -1,0 +1,28 @@
+h1{
+    color: red;
+}
+
+
+.programer {
+
+    color: #ffd661;
+    border: 20px solid royalblue;
+    text-align: center;
+
+}
+.work{
+    color: blueviolet;
+    text-align: center;
+}
+
+#unique{
+    color: royalblue;
+}
+
+body {
+    padding-top: 5rem;
+}
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
