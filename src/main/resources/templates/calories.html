@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>BMI Calculator</title>
+    <title>Calories Calculator</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -55,10 +55,10 @@
 <main role="main" class="container">
 
     <div class="starter-template">
-        <h1>Oblicz swój wskaźnik BMI</h1>
+        <h1>Oblicz dzienne zapotrzebowanie na kalorie</h1>
     </div>
 
-    <form action="/run" method="get">
+    <form action="/calorieresult" method="get">
         <label for="inlineRadio1">Płeć: </label>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="options" id="inlineRadio1" value="option1">
@@ -67,6 +67,10 @@
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="options" id="inlineRadio2" value="option2">
             <label class="form-check-label" for="inlineRadio2">Mężczyzna</label>
+        </div>
+        <div class="form-group">
+            <label for="inputAge">Wiek: </label>
+            <input type="number" step="1"  name="age" class="form-control" id="inputAge" >
         </div>
 
         <div class="form-group">
@@ -77,19 +81,18 @@
             <label for="inputHeight">Wzrost: </label>
             <input type="number" step="1"  name="height" class="form-control" id="inputHeight">
         </div>
+        <select class="form-control">
+            <label>Poziom aktywności fizycznej: </label>
+            <option value="1">Brak aktywności fizycznej</option>
+            <option value="2">Mała aktywność fizyczna (1-3 ćwiczeń tygodniowo)</option>
+            <option value="3">Średnia aktywność fizyczna (3-5 ćwiczeń tygodniowo)</option>
+            <option value="4">Duża aktywność fizyczna (ćwiczenia codziennie)</option>
+            <option value="5">Bardzo duża aktywność fizyczna </option>
+        </select>
 
         <button type="submit" class="btn btn-primary">Oblicz</button>
     </form>
 
-    <h4>Zakresy wartości BMI:</h4>
-    <p>mniej niż 16 - wygłodzenie</p>
-    <p>16 - 16.99 - wychudzenie</p>
-    <p>17 - 18.49 - niedowaga</p>
-    <p>18.5 - 24.99 - wartość prawidłowa</p>
-    <p>25 - 29.99 - nadwaga</p>
-    <p>30 - 34.99 - I stopień otyłości</p>
-    <p>35 - 39.99 - II stopień otyłości</p>
-    <p>powyżej 40 - otyłość skrajna</p>
 
 </main><!-- /.container -->
 

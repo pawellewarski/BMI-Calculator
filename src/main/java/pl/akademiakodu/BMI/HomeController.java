@@ -31,24 +31,41 @@ public class HomeController {
 //        35 - 39.99 - II stopień otyłości
 //        powyżej 40 - otyłość skrajna
 
-        String answer = bmi<16?"wygłodzenie":
-                bmi<17?"wychudzenie":
-                bmi<18.5?"niedowaga":
-                bmi<25?"wartość prawidłowa":
-                bmi<30?"nadwaga":
-                bmi<35?"II stopień otyłości":
-                bmi<40?"II stopień otyłości":
-                "otyłość skrajna";
+        String answer = bmi < 16 ? "wygłodzenie" :
+                bmi < 17 ? "wychudzenie" :
+                        bmi < 18.5 ? "niedowaga" :
+                                bmi < 25 ? "wartość prawidłowa" :
+                                        bmi < 30 ? "nadwaga" :
+                                                bmi < 35 ? "II stopień otyłości" :
+                                                        bmi < 40 ? "II stopień otyłości" :
+                                                                "otyłość skrajna";
 
 
-        modelMap.put("bmi",bmi);
-        modelMap.put("answer",answer);
-
-
-
-
+        modelMap.put("bmi", bmi);
+        modelMap.put("answer", answer);
 
         return "answer";
+    }
+
+    @GetMapping("/calories")
+    public String calories() {
+        return "calories";
+    }
+
+
+    @GetMapping("/calorieresult")
+    public String calorieresult(
+
+            @RequestParam String options,
+            @RequestParam Double age,
+            @RequestParam Double weight,
+            @RequestParam Double height,
+            ModelMap modelMap) {
+        String answerCalories = "Nie znam wzoru :-(";
+        modelMap.put("calorieresult", answerCalories);
+
+
+        return "calorieresult";
     }
 
 
